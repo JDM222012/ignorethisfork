@@ -1,5 +1,12 @@
 "use strict";
 
+if (!localStorage.getItem("reloaded")) {
+    localStorage.setItem("reloaded", "true");
+    window.location.reload();
+} else {
+    localStorage.removeItem("reloaded");
+}; //(Hopefully) Fix Scaling Issues On Elder Kindles
+
 var selectedsquare = null;
 var difficultysettings = {
     easy: { skill: 1 },
