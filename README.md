@@ -1,5 +1,9 @@
 # IllusionChess♟️
 
+> [!NOTE]  
+> On An Elder Kindle/Experiencing Scaling Issues? Try The `-scaled` Build, By [Kurizu](https://github.com/crizmo)
+
+
 Chess (Chess/Board.JS) Installed Persistently Through ILLUSION! (Previously, KChess)
 
 Download And Unzip The Latest Release, Copy `illusionChess` And `illusionChess.sh` To The `documents` Folder On Your Kindle, Then Run!
