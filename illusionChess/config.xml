@@ -2,7 +2,7 @@
 <widget id="xyz.penguins184.illusionchess" version="1.0" viewmodes="application" xmlns="http://www.w3.org/ns/widgets"
     xmlns:kindle="http://kindle.amazon.com/ns/widget-extensions">
     <name xml:lang="en">IllusionChess</name>
-    <description xml:lang="en">IllusionChess: KChess (HackerDude) Persistently Installed On The Kindle</description>
+    <description xml:lang="en">IllusionChess: Persistent Kindle Chess</description>
 
     <content src="index.html" />
 

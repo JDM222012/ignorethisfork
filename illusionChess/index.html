@@ -1,55 +1,42 @@
-<!DOCTYPE HTML>
-
-<!-- Copyright Bluebotlaboratories -->
-
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="user-scalable=no"/>
-  <script src="js/polyfill.min.js"></script>
-  <script src="js/sdk.js"></script>
-
-  <script src="main.js"></script>
-
-  <link href="main.css" rel="stylesheet">
-
-  <title>KChess</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IllusionChess</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link rel="stylesheet" href="css/chessboard.min.css" type="text/css" />
 </head>
-<body onload="onPageLoad()">
-  <div id="log" style="display:none;"></div>
+<body>
+    <div class="container">
+        <h1 id="title">IllusionChess</h1>
+        <p id="log"></p>
+        <div id="buttons">
+            <div id="mode">
+                <button id="ai">Against Robot</button>
+                <button id="human">Against Human</button>
+            </div>
+            <button id="reset">Clear Board</button>
+        </div>
 
-  <h1 id="title">KChess</h1>
-  <center>
-    <div id="chessBoard">
+        <div id="chessboard" style="width: 800px"></div>
+
+        <div id="buttons">
+            <div id="difficulty">
+                <button id="easy">Easy Difficulty</button> <!-- Depth 1 -->
+                <button id="inter">Intermediate Difficulty</button> <!-- Depth 2 -->
+                <button id="hard">Hard Difficulty</button> <!-- Depth 3 -->
+                <!-- No Depth 4... WAY Too Long, Computationally Intensive -->
+            </div>
+        </div>
     </div>
-  </center>
-
-  <center>
-    <h2 id="t">KChess</h2>
-    <button onclick="resetBoard()">Reset Board</button>
-    <br/>
-    <label>FEN</label>
-    <input type="text" id="fenInput">
-    <button onclick="loadFENFromInput()">Load FEN</button>
-    <p>KChess uses the Tatiana Piece Set Created by sadsnake1 licensed under CC BY-NC-SA 4.0</p>
-    <p>v0.2.2 (Illusion Modifications)</p>
-  </center>
-
-  <script>
-    function loadFENFromInput() {
-      var fen = document.getElementById("fenInput").value;
-      window.boardData = parseFenToBoard(fen);
-      var renderedBoard = renderBoard(window.boardData, renderChessBoardCell);
-      document.getElementById("chessBoard").children[0].remove();
-      document.getElementById("chessBoard").appendChild(renderedBoard);
-    }
-
-    function resetBoard() {
-      document.getElementById("fenInput").value = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
-      loadFENFromInput();
-      window.gameData = createGame();
-      window.localStorage.setItem("com.bluebotlaboratories.kchess.boardData", JSON.stringify(window.boardData));
-      window.localStorage.setItem("com.bluebotlaboratories.kchess.gameData", JSON.stringify(window.gameData));
-    }
-  </script>
+    
+    <script src="js/polyfill.min.js"></script>
+    <script src="js/jquery.js"></script> <!-- Transpiled To ES5 With Babel -->
+    <script src="js/chessboard.min.js"></script> <!-- Transpiled To ES5 With Babel -->
+    <script src="js/chess.js"></script> <!-- Transpiled To ES5 With Babel -->
+    <script src="script.js"></script> <!-- Transpiled To ES5 With Babel -->
+    <!-- Stockfish Doesn't Work, JS-CHESS-ENGINE Has F'ed Up UMD... -->
 </body>
 </html>
